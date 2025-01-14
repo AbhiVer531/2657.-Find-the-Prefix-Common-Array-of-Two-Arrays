@@ -1,0 +1,12 @@
+class Solution:
+    def findThePrefixCommonArray(self, A: List[int], B: List[int]) -> List[int]:
+        my_set = set()
+        ans = []
+        for i in range(len(A)):
+            counter = 0
+            my_set.add(B[i])
+            for j in range(0,i+1):
+                if A[j] in my_set:
+                    counter=counter+1
+            ans.append(counter)
+        return ans
